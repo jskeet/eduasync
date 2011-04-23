@@ -18,14 +18,14 @@ using System.Threading.Tasks;
 
 namespace Eduasync
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             SimpleWaitAsync();
         }
 
-        static async void SimpleWaitAsync()
+        private static async void SimpleWaitAsync()
         {
             SimpleInt32Awaitable awaitable = new SimpleInt32Awaitable();
             int result = await awaitable;

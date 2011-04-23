@@ -18,9 +18,9 @@ using System.Threading.Tasks;
 
 namespace Eduasync
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             DoNothingAsync();
         }
@@ -28,7 +28,7 @@ namespace Eduasync
         // Warning CS1998 is about a method with no awaits in... exactly what we're trying to
         // achieve!
 #pragma warning disable 1998
-        static async Task<int> DoNothingAsync()
+        private static async Task<int> DoNothingAsync()
         {
             return 0;
         }

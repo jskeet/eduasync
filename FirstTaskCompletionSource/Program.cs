@@ -19,9 +19,9 @@ using System;
 
 namespace Eduasync
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Task<int> task = Return10Async();
             Console.WriteLine(task.Result);
@@ -30,7 +30,7 @@ namespace Eduasync
         // Warning CS1998 is about a method with no awaits in... exactly what we're trying to
         // achieve!
 #pragma warning disable 1998
-        static async Task<int> Return10Async()
+        private static async Task<int> Return10Async()
         {
             return 10;
         }
