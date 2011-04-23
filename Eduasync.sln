@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 SimpleInt32Awaitable", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 FirstTaskCompletionSource", "FirstTaskCompletionSource\06 FirstTaskCompletionSource.csproj", "{B62AF87A-56D3-4F7A-8A03-FBDEC526D7B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07 TaskIntegration", "TaskIntegration\07 TaskIntegration.csproj", "{192996C3-4632-4915-8B64-CC49AA81B5EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,16 @@ Global
 		{B62AF87A-56D3-4F7A-8A03-FBDEC526D7B1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B62AF87A-56D3-4F7A-8A03-FBDEC526D7B1}.Release|x86.ActiveCfg = Release|x86
 		{B62AF87A-56D3-4F7A-8A03-FBDEC526D7B1}.Release|x86.Build.0 = Release|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Debug|x86.ActiveCfg = Debug|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Debug|x86.Build.0 = Debug|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|Any CPU.ActiveCfg = Release|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|Mixed Platforms.Build.0 = Release|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|x86.ActiveCfg = Release|x86
+		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
