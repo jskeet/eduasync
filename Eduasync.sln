@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 FirstTaskCompletionSourc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07 TaskIntegration", "TaskIntegration\07 TaskIntegration.csproj", "{192996C3-4632-4915-8B64-CC49AA81B5EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08 NaiveExceptions", "NaiveExceptions\08 NaiveExceptions.csproj", "{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,16 @@ Global
 		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|Mixed Platforms.Build.0 = Release|x86
 		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|x86.ActiveCfg = Release|x86
 		{192996C3-4632-4915-8B64-CC49AA81B5EA}.Release|x86.Build.0 = Release|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Debug|x86.ActiveCfg = Debug|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Debug|x86.Build.0 = Debug|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Release|Any CPU.ActiveCfg = Release|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Release|Mixed Platforms.Build.0 = Release|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Release|x86.ActiveCfg = Release|x86
+		{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
