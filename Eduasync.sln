@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13 AsyncWithoutCompilerHelp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14 SimpleStateMachine", "SimpleStateMachine\14 SimpleStateMachine.csproj", "{9BF416C1-0D4B-4239-9777-E2E166E1A3C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15 ComplexStateMachine", "ComplexStateMachine\15 ComplexStateMachine.csproj", "{93DE3EFB-EE11-403F-8C16-10B3BE428033}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,16 @@ Global
 		{9BF416C1-0D4B-4239-9777-E2E166E1A3C1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{9BF416C1-0D4B-4239-9777-E2E166E1A3C1}.Release|x86.ActiveCfg = Release|x86
 		{9BF416C1-0D4B-4239-9777-E2E166E1A3C1}.Release|x86.Build.0 = Release|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Debug|x86.ActiveCfg = Debug|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Debug|x86.Build.0 = Debug|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Release|Any CPU.ActiveCfg = Release|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Release|Mixed Platforms.Build.0 = Release|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Release|x86.ActiveCfg = Release|x86
+		{93DE3EFB-EE11-403F-8C16-10B3BE428033}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
