@@ -68,7 +68,8 @@ namespace Eduasync
             return stateMachine.builder.Task;
         }
 
-        private class StateMachine
+        [CompilerGenerated]
+        private sealed class StateMachine
         {
             // Fields representing local variables
             public int i;
