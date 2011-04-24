@@ -42,16 +42,16 @@ namespace Eduasync
             stateMachine.moveNextDelegate = stateMachine.MoveNext;
             stateMachine.builder = AsyncTaskMethodBuilder<int>.Create();
             stateMachine.MoveNext();
-            return stateMachine.task;
+            return stateMachine.builder.Task;
         }
 
         private class StateMachine
         {
             // Fields representing local variables
-            private TaskAwaiter<int> awaiter;
             public Task<int> task;
 
             // Fields representing awaiters
+            private TaskAwaiter<int> awaiter;
 
             // Fields common to all async state machines
             public AsyncTaskMethodBuilder<int> builder;
