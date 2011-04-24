@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11 UnobservedExceptions", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12 ObservingAllExceptions", "ObservingAllExceptions\12 ObservingAllExceptions.csproj", "{C05C3551-956B-4B6E-9E19-0958F635E60A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13 AsyncWithoutCompilerHelp", "AsyncWithoutCompilerHelp\13 AsyncWithoutCompilerHelp.csproj", "{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,16 @@ Global
 		{C05C3551-956B-4B6E-9E19-0958F635E60A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{C05C3551-956B-4B6E-9E19-0958F635E60A}.Release|x86.ActiveCfg = Release|x86
 		{C05C3551-956B-4B6E-9E19-0958F635E60A}.Release|x86.Build.0 = Release|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Debug|x86.ActiveCfg = Debug|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Debug|x86.Build.0 = Debug|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Release|Any CPU.ActiveCfg = Release|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Release|Mixed Platforms.Build.0 = Release|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Release|x86.ActiveCfg = Release|x86
+		{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
