@@ -195,8 +195,10 @@ namespace Eduasync
             }
 
             // Obsolete: will be removed from later builds.
+#pragma warning disable 0414, 0649
             private bool disposing;
             public int loopCountCopy;
+#pragma warning restore
 
             [DebuggerHidden]
             public void Dispose()

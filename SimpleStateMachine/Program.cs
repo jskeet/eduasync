@@ -70,7 +70,9 @@ namespace Eduasync
                 int result;
                 try
                 {
+#pragma warning disable 0219 // doFinallyBodies is never used
                     bool doFinallyBodies = true;
+#pragma warning restore
                     if (state != 1)
                     {
                         if (state != -1)
@@ -105,7 +107,9 @@ namespace Eduasync
 
 
             // Obsolete: will be removed from later builds.
+#pragma warning disable 0414
             private bool disposing;
+#pragma warning restore
 
             [DebuggerHidden]
             public void Dispose()

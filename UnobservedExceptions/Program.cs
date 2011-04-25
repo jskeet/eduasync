@@ -30,7 +30,7 @@ namespace Eduasync
             {
                 Console.WriteLine(task.Result);
             }
-            catch (AggregateException e)
+            catch (AggregateException)
             {
                 Console.WriteLine("Oops, it failed");
             }
