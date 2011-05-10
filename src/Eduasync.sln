@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17 CtpNestedAwaitsBug", "Ct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18 IndependentCoroutines", "IndependentCoroutines\18 IndependentCoroutines.csproj", "{FC6201DC-3EE9-44A3-AC0D-F3F224CF1ADA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19 HomogeneousCoroutines", "HomogeneousCoroutines\19 HomogeneousCoroutines.csproj", "{CADC75FF-0CB4-4071-988E-8AB1C76B514D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +229,16 @@ Global
 		{FC6201DC-3EE9-44A3-AC0D-F3F224CF1ADA}.Release|Mixed Platforms.Build.0 = Release|x86
 		{FC6201DC-3EE9-44A3-AC0D-F3F224CF1ADA}.Release|x86.ActiveCfg = Release|x86
 		{FC6201DC-3EE9-44A3-AC0D-F3F224CF1ADA}.Release|x86.Build.0 = Release|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Debug|x86.ActiveCfg = Debug|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Debug|x86.Build.0 = Debug|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Release|Any CPU.ActiveCfg = Release|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Release|Mixed Platforms.Build.0 = Release|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Release|x86.ActiveCfg = Release|x86
+		{CADC75FF-0CB4-4071-988E-8AB1C76B514D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
