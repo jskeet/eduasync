@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21 GosubCoroutines", "Gosub
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20 PipelineCoroutines", "PipelineCoroutines\20 PipelineCoroutines.csproj", "{1BA21BDD-75FD-49C6-BC9C-0B76C0BBBD8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22 ComeFromCoroutines", "ComeFromCoroutines\22 ComeFromCoroutines.csproj", "{648BF089-D03D-4D6F-9D79-D05015D8FB5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -263,6 +265,16 @@ Global
 		{1BA21BDD-75FD-49C6-BC9C-0B76C0BBBD8C}.Release|Mixed Platforms.Build.0 = Release|x86
 		{1BA21BDD-75FD-49C6-BC9C-0B76C0BBBD8C}.Release|x86.ActiveCfg = Release|x86
 		{1BA21BDD-75FD-49C6-BC9C-0B76C0BBBD8C}.Release|x86.Build.0 = Release|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Debug|x86.ActiveCfg = Debug|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Debug|x86.Build.0 = Debug|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|Any CPU.ActiveCfg = Release|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|Mixed Platforms.Build.0 = Release|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|x86.ActiveCfg = Release|x86
+		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
