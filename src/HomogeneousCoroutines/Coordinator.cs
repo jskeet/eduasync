@@ -20,7 +20,7 @@ using System.Collections.Generic;
 
 namespace Eduasync
 {
-    public class Coordinator<T> : IEnumerable
+    public sealed class Coordinator<T> : IEnumerable
     {
         private readonly Queue<Action> actions = new Queue<Action>();
         private readonly Stack<T> values = new Stack<T>();
@@ -80,7 +80,7 @@ namespace Eduasync
         }
 
         // Using a separate type forces a call to Yield in order to await
-        public class Awaitable
+        public sealed class Awaitable
         {
             private readonly Coordinator<T> coordinator;
 

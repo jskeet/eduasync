@@ -20,7 +20,7 @@ using System.Collections.Generic;
 
 namespace Eduasync
 {
-    public class Coordinator : IEnumerable
+    public sealed class Coordinator : IEnumerable
     {
         private readonly Queue<Action> actions = new Queue<Action>();
 
