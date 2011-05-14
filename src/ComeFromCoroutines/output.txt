@@ -1,0 +1,7 @@
+﻿Registering interest
+Hitting first label...
+Looks like the first label was hit! (Let's hit it again.)
+Looks like the first label was hit a second time!
+Done with the first label now
+Hitting second label...
+Second label hit too

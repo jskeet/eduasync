@@ -1,0 +1,20 @@
+﻿Gosub HandleEven
+Message: 0 is even
+Gosub HandleEven
+Message: 1 is odd
+Gosub HandleEven
+Message: 2 is even
+Gosub HandleEven
+Message: 3 is odd
+Gosub HandleEven
+Message: 4 is even
+Gosub HandleEven
+Message: 5 is odd
+Gosub HandleEven
+Message: 6 is even
+Gosub HandleEven
+Message: 7 is odd
+Gosub HandleEven
+Message: 8 is even
+Gosub HandleEven
+Message: 9 is odd
