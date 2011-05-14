@@ -150,16 +150,21 @@ namespace Eduasync
 
             public void OnCompleted(Action action)
             {
-                Continuation continuation;
-                if (!coordinator.labels.TryGetValue(label, out continuation))
+                Continuation newContinuation = new Continuation(action);
+                Continuation oldContinuation;
+                if (!coordinator.labels.TryGetValue(label, out oldContinuation))
                 {
                     // First time coming from this label. Always succeeds.
-                    continuation = new Continuation(action);
-                    coordinator.labels[label] = continuation;
+                    coordinator.labels[label] = newContinuation;
                 }
                 else
                 {
-                    if (!continuation.Equals(new Continuation(action)))
+                    // Current semantics are to prohibit two different ComeFrom calls for the same label.
+                    // An alternative would be to just replace the existing continuation with the new one,
+                    // in which case we wouldn't need any of this - we could just use
+                    // coordinator.labels[label] = newContinuation;
+                    // unconditionally.
+                    if (!oldContinuation.Equals(newContinuation))
                     {
                         throw new InvalidOperationException("Additional continuation detected for label " + label);
                     }
