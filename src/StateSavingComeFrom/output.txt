@@ -1,0 +1,19 @@
+﻿Message at 14/05/2011 08:05:25
+We logged something.
+Just after ComeFrom(End). count=0
+We logged something.
+Just after ComeFrom(Middle). count=1
+Message at 14/05/2011 08:05:25
+We logged something.
+Just after ComeFrom(Middle). count=2
+Message at 14/05/2011 08:05:25
+We logged something.
+Just after ComeFrom(Middle). count=3
+Just after ComeFrom(End). count=3
+We logged something.
+Just after ComeFrom(Middle). count=4
+Just after ComeFrom(End). count=4
+We logged something.
+Just after ComeFrom(Middle). count=5
+Just after ComeFrom(End). count=5
+Okay, we're done now

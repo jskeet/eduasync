@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20 PipelineCoroutines", "Pi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22 ComeFromCoroutines", "ComeFromCoroutines\22 ComeFromCoroutines.csproj", "{648BF089-D03D-4D6F-9D79-D05015D8FB5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23 StateSavingComeFrom", "StateSavingComeFrom\23 StateSavingComeFrom.csproj", "{281BD623-4070-4AC0-B04A-E698186330F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -275,6 +277,16 @@ Global
 		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|Mixed Platforms.Build.0 = Release|x86
 		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|x86.ActiveCfg = Release|x86
 		{648BF089-D03D-4D6F-9D79-D05015D8FB5C}.Release|x86.Build.0 = Release|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Debug|x86.ActiveCfg = Debug|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Debug|x86.Build.0 = Debug|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|Any CPU.ActiveCfg = Release|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|Mixed Platforms.Build.0 = Release|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|x86.ActiveCfg = Release|x86
+		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
