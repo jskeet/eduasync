@@ -15,25 +15,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 FirstTaskCompletionSourc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07 TaskIntegration", "TaskIntegration\07 TaskIntegration.csproj", "{192996C3-4632-4915-8B64-CC49AA81B5EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08 NaiveExceptions", "NaiveExceptions\08 NaiveExceptions.csproj", "{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13 NaiveExceptions", "NaiveExceptions\13 NaiveExceptions.csproj", "{69FDEFD5-C0D8-410C-9DAC-2121239DB4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09 ExceptionUnwrapping", "ExceptionUnwrapping\09 ExceptionUnwrapping.csproj", "{710A5A43-3664-452A-B09F-84D7B82AD556}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14 ExceptionUnwrapping", "ExceptionUnwrapping\14 ExceptionUnwrapping.csproj", "{710A5A43-3664-452A-B09F-84D7B82AD556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10 ExceptionRewrapping", "ExceptionRewrapping\10 ExceptionRewrapping.csproj", "{5DB416B8-6EE6-495D-AFB8-F27CEB2770DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15 ExceptionRewrapping", "ExceptionRewrapping\15 ExceptionRewrapping.csproj", "{5DB416B8-6EE6-495D-AFB8-F27CEB2770DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11 UnobservedExceptions", "UnobservedExceptions\11 UnobservedExceptions.csproj", "{29F10949-17AB-48C8-946C-D23BF5A47D49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16 UnobservedExceptions", "UnobservedExceptions\16 UnobservedExceptions.csproj", "{29F10949-17AB-48C8-946C-D23BF5A47D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12 ObservingAllExceptions", "ObservingAllExceptions\12 ObservingAllExceptions.csproj", "{C05C3551-956B-4B6E-9E19-0958F635E60A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17 ObservingAllExceptions", "ObservingAllExceptions\17 ObservingAllExceptions.csproj", "{C05C3551-956B-4B6E-9E19-0958F635E60A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13 AsyncWithoutCompilerHelp", "AsyncWithoutCompilerHelp\13 AsyncWithoutCompilerHelp.csproj", "{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08 AsyncWithoutCompilerHelp", "AsyncWithoutCompilerHelp\08 AsyncWithoutCompilerHelp.csproj", "{9C2F8EFC-6BDC-413A-B11C-6172E6DC5585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14 SimpleStateMachine", "SimpleStateMachine\14 SimpleStateMachine.csproj", "{9BF416C1-0D4B-4239-9777-E2E166E1A3C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09 SimpleStateMachine", "SimpleStateMachine\09 SimpleStateMachine.csproj", "{9BF416C1-0D4B-4239-9777-E2E166E1A3C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15 ComplexStateMachine", "ComplexStateMachine\15 ComplexStateMachine.csproj", "{93DE3EFB-EE11-403F-8C16-10B3BE428033}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10 ComplexStateMachine", "ComplexStateMachine\10 ComplexStateMachine.csproj", "{93DE3EFB-EE11-403F-8C16-10B3BE428033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16 MultiAwaitStateMachine", "MultiAwaitStateMachine\16 MultiAwaitStateMachine.csproj", "{D8F39E6F-F18F-488B-8923-0388E0F0B66D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11 MultiAwaitStateMachine", "MultiAwaitStateMachine\11 MultiAwaitStateMachine.csproj", "{D8F39E6F-F18F-488B-8923-0388E0F0B66D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17 CtpNestedAwaitsBug", "CtpNestedAwaitsBug\17 CtpNestedAwaitsBug.csproj", "{AF8427F4-F3AA-4A2B-8B1F-060A55004F32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12 CtpNestedAwaitsBug", "CtpNestedAwaitsBug\12 CtpNestedAwaitsBug.csproj", "{AF8427F4-F3AA-4A2B-8B1F-060A55004F32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18 IndependentCoroutines", "IndependentCoroutines\18 IndependentCoroutines.csproj", "{FC6201DC-3EE9-44A3-AC0D-F3F224CF1ADA}"
 EndProject

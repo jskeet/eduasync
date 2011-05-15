@@ -14,8 +14,8 @@
 // limitations under the License.
 #endregion
 
-using System.Threading.Tasks;
 using System;
+using System.Threading.Tasks;
 
 namespace Eduasync
 {
