@@ -43,7 +43,7 @@ namespace Eduasync
             int value1 = await task1;
             int value2 = await task2;
 
-            Log("In SumAsync, ater awaits");
+            Log("In SumAsync, after awaits");
 
             return value1 + value2;
         }

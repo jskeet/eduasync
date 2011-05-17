@@ -1,5 +1,5 @@
 ﻿Thread=1. Time=12ms. Message=In Main, before SumAsync call
 Thread=1. Time=51ms. Message=In SumAsync, before awaits
 Thread=1. Time=55ms. Message=In Main, after SumAsync returned
-Thread=4. Time=802ms. Message=In SumAsync, ater awaits
+Thread=4. Time=802ms. Message=In SumAsync, after awaits
 Thread=1. Time=802ms. Message=Final result: 15
