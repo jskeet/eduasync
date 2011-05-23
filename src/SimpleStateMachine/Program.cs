@@ -90,7 +90,7 @@ namespace Eduasync
                         return;
                     }
                     state = 0;
-                Label_GetResult:
+                  Label_GetResult:
                     int awaitResult = awaiter.GetResult();
                     awaiter = new TaskAwaiter<int>();
                     result = awaitResult;
