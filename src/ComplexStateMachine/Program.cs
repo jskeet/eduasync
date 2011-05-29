@@ -43,6 +43,7 @@ namespace Eduasync
                     {
                         try
                         {
+                            Console.WriteLine("Awaiting...");
                             int value = await valueFetcher;
                             writer.WriteLine("Got value {0}", value);
                             sum += value;
@@ -140,12 +141,13 @@ namespace Eduasync
                             // Back to generated code again...
                             while (j < 3)
                             {
-                              // We want Label_ResumePoint to be here really
+                                // We want Label_ResumePoint to be here really
                                 try
                                 {
                                     tmpState = state;
                                     if (tmpState != 1)
                                     {
+                                        Console.WriteLine("Awaiting...");
                                         awaiter = valueFetcher.GetAwaiter();
                                         if (!awaiter.IsCompleted)
                                         {
