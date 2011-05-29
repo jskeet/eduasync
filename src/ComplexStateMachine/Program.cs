@@ -141,9 +141,9 @@ namespace Eduasync
                             // Back to generated code again...
                             while (j < 3)
                             {
-                                // We want Label_ResumePoint to be here really
                                 try
                                 {
+                                    // We want Label_ResumePoint to be here really
                                     tmpState = state;
                                     if (tmpState != 1)
                                     {
