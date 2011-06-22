@@ -47,7 +47,7 @@ namespace Eduasync
                         tcs.SetException(task.Exception);
                         break;
                     default:
-                        tcs.SetException(new InvalidOperationException("Continuationcalled illegally."));
+                        tcs.SetException(new InvalidOperationException("Continuation called illegally."));
                         break;
                 }
             });

@@ -43,10 +43,13 @@ namespace Eduasync
 
         private static async Task<int> CauseTwoFailures()
         {
-            Task<int> first = Task<int>.Factory.StartNew(() => { throw new InvalidOperationException(); });
-            Task<int> second = Task<int>.Factory.StartNew(() => { throw new InvalidOperationException(); });
+            Task<int> firstTask = Task<int>.Factory.StartNew(() => { throw new InvalidOperationException(); });
+            Task<int> secondTask = Task<int>.Factory.StartNew(() => { throw new InvalidOperationException(); });
 
-            return await first + await second;
+            int firstValue = await firstTask;
+            int secondValue = await secondTask;
+
+            return firstValue + secondValue;
         }
     }
 }
