@@ -22,15 +22,19 @@ namespace Eduasync
     {
         private static void Main(string[] args)
         {
-            var coordinator = new Coordinator { FirstCoroutine, SecondCoroutine };
+            var coordinator = new Coordinator { 
+                FirstCoroutine,
+                SecondCoroutine,
+                ThirdCoroutine
+            };
             coordinator.Start();
         }
 
         private static async void FirstCoroutine(Coordinator coordinator)
         {
             Console.WriteLine("Starting FirstCoroutine");
-
             Console.WriteLine("Yielding from FirstCoroutine...");
+
             await coordinator;
 
             Console.WriteLine("Returned to FirstCoroutine");
@@ -45,8 +49,8 @@ namespace Eduasync
         private static async void SecondCoroutine(Coordinator coordinator)
         {
             Console.WriteLine("    Starting SecondCoroutine");
-
             Console.WriteLine("    Yielding from SecondCoroutine...");
+
             await coordinator;
 
             Console.WriteLine("    Returned to SecondCoroutine");
@@ -56,6 +60,17 @@ namespace Eduasync
 
             Console.WriteLine("    Returned to SecondCoroutine again");
             Console.WriteLine("    Finished SecondCoroutine");
+        }
+
+        private static async void ThirdCoroutine(Coordinator coordinator)
+        {
+            Console.WriteLine("        Starting ThirdCoroutine");
+            Console.WriteLine("        Yielding from ThirdCoroutine...");
+
+            await coordinator;
+
+            Console.WriteLine("        Returned to ThirdCoroutine");
+            Console.WriteLine("        Finished ThirdCoroutine...");
         }
     }
 }

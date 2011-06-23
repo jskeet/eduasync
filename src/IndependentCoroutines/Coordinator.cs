@@ -24,29 +24,21 @@ namespace Eduasync
     {
         private readonly Queue<Action> actions = new Queue<Action>();
 
-        public Coordinator GetAwaiter()
-        {
-            return this;
-        }
-
-        public void GetResult()
-        {
-        }
-
-        // Force await to yield control
-        public bool IsCompleted { get { return false; } }
-
-        public void OnCompleted(Action continuation)
-        {
-            actions.Enqueue(continuation);
-        }
-
         // Used by collection initializer to specify the coroutines to run
         public void Add(Action<Coordinator> coroutine)
         {
             actions.Enqueue(() => coroutine(this));
         }
 
+        // Required for collection initializers, but we don't really want
+        // to expose anything.
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotSupportedException("IEnumerable only supported to enable collection initializers");
+        }
+        
+        // Execute actions in the queue until it's empty. Actions add *more*
+        // actions (continuations) to the queue by awaiting this coordinator.
         public void Start()
         {
             while (actions.Count > 0)
@@ -55,11 +47,26 @@ namespace Eduasync
             }
         }
 
-        // Required for collection initializers, but we don't really want
-        // to expose anything.
-        IEnumerator IEnumerable.GetEnumerator()
+        // Used by await expressions to get an awaiter
+        public Coordinator GetAwaiter()
         {
-            throw new NotSupportedException("IEnumerable only supported to enable collection initializers");
+            return this;
+        }
+
+        // Force await to yield control
+        public bool IsCompleted { get { return false; } }
+
+        public void OnCompleted(Action continuation)
+        {
+            // Put the continuation at the end of the queue, ready to
+            // execute when the other coroutines have had a go.
+            actions.Enqueue(continuation);
+        }
+
+        public void GetResult()
+        {
+            // Our await expressions are void, and we never need to throw
+            // an exception, so this is a no-op.
         }
     }
 }
