@@ -14,23 +14,34 @@
 // limitations under the License.
 #endregion
 
+using System.Threading.Tasks;
+
 namespace System.Runtime.CompilerServices
 {
-    public struct AsyncVoidMethodBuilder
+    public struct AsyncTaskMethodBuilder<T>
     {
-        public static AsyncVoidMethodBuilder Create()
+        private readonly TaskCompletionSource<T> source;
+
+        private AsyncTaskMethodBuilder(TaskCompletionSource<T> source)
         {
-            return new AsyncVoidMethodBuilder();
+            this.source = source;
+        }
+
+        public static AsyncTaskMethodBuilder<T> Create()
+        {
+            return new AsyncTaskMethodBuilder<T>(new TaskCompletionSource<T>());
         }
 
         public void SetException(Exception e)
         {
-            throw e;
+            source.SetException(e);
         }
 
-        public void SetResult()
+        public void SetResult(T result)
         {
-            // No-op
+            source.SetResult(result);
         }
+
+        public Task<T> Task { get { return source.Task; } }
     }
 }

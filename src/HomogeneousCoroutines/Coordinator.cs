@@ -17,15 +17,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Eduasync
 {
     public sealed class Coordinator<T> : IEnumerable
     {
         private readonly Queue<Action> actions = new Queue<Action>();
-        private readonly Stack<T> values = new Stack<T>();
 
         private readonly Awaitable awaitable;
+
+        private T currentValue;
+        private bool valuePresent;
 
         public Coordinator()
         {
@@ -41,7 +44,7 @@ namespace Eduasync
 
         public T GetResult()
         {
-            return values.Pop();
+            return ConsumeValue();
         }
 
         // Force await to yield control
@@ -53,22 +56,52 @@ namespace Eduasync
         }
 
         // Used by collection initializer to specify the coroutines to run
-        public void Add(Action<Coordinator<T>> coroutine)
+        public void Add(Func<Coordinator<T>, T, Task<T>> coroutine)
         {
-            actions.Enqueue(() => coroutine(this));
+            actions.Enqueue(() => {
+                Task<T> task = coroutine(this, ConsumeValue());
+                task.ContinueWith(ignored => SupplyValue(task.Result),
+                    TaskContinuationOptions.ExecuteSynchronously);
+            });
         }
 
-        public void Start()
+        private T ConsumeValue()
         {
+            if (!valuePresent)
+            {
+                throw new InvalidOperationException
+                    ("Attempt to consume value when it isn't present");
+            }
+            T oldValue = currentValue;
+            valuePresent = false;
+            currentValue = default(T);
+            return oldValue;
+        }
+
+        private void SupplyValue(T value)
+        {
+            if (valuePresent)
+            {
+                throw new InvalidOperationException
+                    ("Attempt to supply value when one is already present");
+            }
+            currentValue = value;
+            valuePresent = true;
+        }
+
+        public T Start(T initialValue)
+        {
+            SupplyValue(initialValue);
             while (actions.Count > 0)
             {
                 actions.Dequeue().Invoke();
             }
+            return ConsumeValue();
         }
 
         public Awaitable Yield(T value)
         {
-            values.Push(value);
+            SupplyValue(value);
             return awaitable;
         }
 

@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsyncVoidMethodBuilder.cs" />
+    <Compile Include="AsyncTaskMethodBuilder.cs" />
     <Compile Include="Coordinator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

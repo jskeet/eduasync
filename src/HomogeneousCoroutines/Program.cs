@@ -15,6 +15,7 @@
 #endregion
 
 using System;
+using System.Threading.Tasks;
 
 namespace Eduasync
 {
@@ -22,15 +23,23 @@ namespace Eduasync
     {
         private static void Main(string[] args)
         {
-            var coordinator = new Coordinator<string> { FirstCoroutine, SecondCoroutine };
-            coordinator.Start();
+            var coordinator = new Coordinator<string> {
+                FirstCoroutine,
+                SecondCoroutine,
+                ThirdCoroutine
+            };
+            string finalResult = coordinator.Start("m1");
+            Console.WriteLine("Final result: {0}", finalResult);
         }
 
-        private static async void FirstCoroutine(Coordinator<string> coordinator)
+        private static async Task<string> FirstCoroutine(
+            Coordinator<string> coordinator,
+            string initialValue)
         {
-            Console.WriteLine("Starting FirstCoroutine");
-
+            Console.WriteLine("Starting FirstCoroutine with initial value {0}",
+                              initialValue);
             Console.WriteLine("Yielding 'x1' from FirstCoroutine...");
+
             string received = await coordinator.Yield("x1");
 
             Console.WriteLine("Returned to FirstCoroutine with value {0}", received);
@@ -40,13 +49,18 @@ namespace Eduasync
 
             Console.WriteLine("Returned to FirstCoroutine with value {0}", received);
             Console.WriteLine("Finished FirstCoroutine");
+            return "x3";
         }
 
-        private static async void SecondCoroutine(Coordinator<string> coordinator)
+        private static async Task<string> SecondCoroutine(
+            Coordinator<string> coordinator,
+            string initialValue)
         {
+            Console.WriteLine("    Starting SecondCoroutine with initial value {0}",
+                              initialValue);
             Console.WriteLine("    Starting SecondCoroutine");
-
             Console.WriteLine("    Yielding 'y1' from SecondCoroutine...");
+            
             string received = await coordinator.Yield("y1");
 
             Console.WriteLine("    Returned to SecondCoroutine with value {0}", received);
@@ -62,6 +76,22 @@ namespace Eduasync
 
             Console.WriteLine("    Returned to SecondCoroutine with value {0}", received);
             Console.WriteLine("    Finished SecondCoroutine");
+            return "y4";
+        }
+
+        private static async Task<string> ThirdCoroutine(
+            Coordinator<string> coordinator,
+            string initialValue)
+        {
+            Console.WriteLine("        Starting ThirdCoroutine with initial value {0}",
+                              initialValue);
+            Console.WriteLine("        Yielding 'z1' from ThirdCoroutine...");
+
+            string received = await coordinator.Yield("z1");
+
+            Console.WriteLine("        Returned to ThirdCoroutine with value {0}", received);
+            Console.WriteLine("        Finished ThirdCoroutine...");
+            return "z2";
         }
     }
 }
