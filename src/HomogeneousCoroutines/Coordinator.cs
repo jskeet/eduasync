@@ -17,24 +17,38 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Eduasync
 {
-    public sealed class Coordinator<T> : IEnumerable
+    public sealed class Coordinator<T>
     {
-        private readonly Queue<Action> actions = new Queue<Action>();
-
+        private readonly Queue<Action> actions;
         private readonly Awaitable awaitable;
 
         private T currentValue;
         private bool valuePresent;
 
-        public Coordinator()
+        public Coordinator(params Func<Coordinator<T>, T, Task<T>>[] coroutines)
         {
             // We can't refer to "this" in the variable initializer. We can use
             // the same awaitable for all yield calls.
             this.awaitable = new Awaitable(this);
+            actions = new Queue<Action>(coroutines.Select(ConvertCoroutine));
+        }
+
+        // Converts a coroutine into an action which consumes the current value,
+        // calls the coroutine, and attaches a continuation to it so that the return
+        // value is used as the new value.
+        private Action ConvertCoroutine(Func<Coordinator<T>, T, Task<T>> coroutine)
+        {
+            return () =>
+            {
+                Task<T> task = coroutine(this, ConsumeValue());
+                task.ContinueWith(ignored => SupplyValue(task.Result),
+                    TaskContinuationOptions.ExecuteSynchronously);
+            };
         }
 
         public Coordinator<T> GetAwaiter()
@@ -53,16 +67,6 @@ namespace Eduasync
         public void OnCompleted(Action continuation)
         {
             actions.Enqueue(continuation);
-        }
-
-        // Used by collection initializer to specify the coroutines to run
-        public void Add(Func<Coordinator<T>, T, Task<T>> coroutine)
-        {
-            actions.Enqueue(() => {
-                Task<T> task = coroutine(this, ConsumeValue());
-                task.ContinueWith(ignored => SupplyValue(task.Result),
-                    TaskContinuationOptions.ExecuteSynchronously);
-            });
         }
 
         private T ConsumeValue()
@@ -103,13 +107,6 @@ namespace Eduasync
         {
             SupplyValue(value);
             return awaitable;
-        }
-
-        // Required for collection initializers, but we don't really want
-        // to expose anything.
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotSupportedException("IEnumerable only supported to enable collection initializers");
         }
 
         // Using a separate type forces a call to Yield in order to await

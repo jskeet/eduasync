@@ -23,11 +23,9 @@ namespace Eduasync
     {
         private static void Main(string[] args)
         {
-            var coordinator = new Coordinator<string> {
-                FirstCoroutine,
-                SecondCoroutine,
-                ThirdCoroutine
-            };
+            var coordinator = new Coordinator<string>(FirstCoroutine,
+                                                      SecondCoroutine,
+                                                      ThirdCoroutine);
             string finalResult = coordinator.Start("m1");
             Console.WriteLine("Final result: {0}", finalResult);
         }

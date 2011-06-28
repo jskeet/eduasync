@@ -1,14 +1,20 @@
-﻿Starting FirstCoroutine
+﻿Starting FirstCoroutine with initial value m1
 Yielding 'x1' from FirstCoroutine...
+    Starting SecondCoroutine with initial value x1
     Starting SecondCoroutine
     Yielding 'y1' from SecondCoroutine...
-Returned to FirstCoroutine with value y1
+        Starting ThirdCoroutine with initial value y1
+        Yielding 'z1' from ThirdCoroutine...
+Returned to FirstCoroutine with value z1
 Yielding 'x2' from FirstCoroutine...
     Returned to SecondCoroutine with value x2
     Yielding 'y2' from SecondCoroutine...
-Returned to FirstCoroutine with value y2
+        Returned to ThirdCoroutine with value y2
+        Finished ThirdCoroutine...
+Returned to FirstCoroutine with value z2
 Finished FirstCoroutine
-    Returned to SecondCoroutine with value x1
+    Returned to SecondCoroutine with value x3
     Yielding 'y3' from SecondCoroutine...
     Returned to SecondCoroutine with value y3
     Finished SecondCoroutine
+Final result: y4
