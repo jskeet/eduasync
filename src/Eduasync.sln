@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 VoidMethodWithoutAwaits", "VoidMethodWithoutAwaits\01 VoidMethodWithoutAwaits.csproj", "{A67F15CA-D32C-4511-B8B7-DCC3024D705C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 NonGenericMethodWithoutAwaits", "NonGenericMethodWithoutAwaits\02 NonGenericMethodWithoutAwaits.csproj", "{D47A7B33-741B-4067-B49E-6FC78529460C}"
@@ -46,6 +46,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22 ComeFromCoroutines", "ComeFromCoroutines\22 ComeFromCoroutines.csproj", "{648BF089-D03D-4D6F-9D79-D05015D8FB5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23 StateSavingComeFrom", "StateSavingComeFrom\23 StateSavingComeFrom.csproj", "{281BD623-4070-4AC0-B04A-E698186330F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24 DirectedCoroutines", "DirectedCoroutines\24 DirectedCoroutines.csproj", "{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -287,6 +289,16 @@ Global
 		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|Mixed Platforms.Build.0 = Release|x86
 		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|x86.ActiveCfg = Release|x86
 		{281BD623-4070-4AC0-B04A-E698186330F6}.Release|x86.Build.0 = Release|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Debug|x86.ActiveCfg = Debug|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Debug|x86.Build.0 = Debug|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Release|Any CPU.ActiveCfg = Release|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Release|Mixed Platforms.Build.0 = Release|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Release|x86.ActiveCfg = Release|x86
+		{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
