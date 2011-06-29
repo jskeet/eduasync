@@ -51,14 +51,19 @@ namespace Eduasync
             };
         }
 
+        public T Start(T initialValue)
+        {
+            SupplyValue(initialValue);
+            while (actions.Count > 0)
+            {
+                actions.Dequeue().Invoke();
+            }
+            return ConsumeValue();
+        }
+
         public Coordinator<T> GetAwaiter()
         {
             return this;
-        }
-
-        public T GetResult()
-        {
-            return ConsumeValue();
         }
 
         // Force await to yield control
@@ -69,17 +74,9 @@ namespace Eduasync
             actions.Enqueue(continuation);
         }
 
-        private T ConsumeValue()
+        public T GetResult()
         {
-            if (!valuePresent)
-            {
-                throw new InvalidOperationException
-                    ("Attempt to consume value when it isn't present");
-            }
-            T oldValue = currentValue;
-            valuePresent = false;
-            currentValue = default(T);
-            return oldValue;
+            return ConsumeValue();
         }
 
         private void SupplyValue(T value)
@@ -93,14 +90,17 @@ namespace Eduasync
             valuePresent = true;
         }
 
-        public T Start(T initialValue)
+        private T ConsumeValue()
         {
-            SupplyValue(initialValue);
-            while (actions.Count > 0)
+            if (!valuePresent)
             {
-                actions.Dequeue().Invoke();
+                throw new InvalidOperationException
+                    ("Attempt to consume value when it isn't present");
             }
-            return ConsumeValue();
+            T oldValue = currentValue;
+            valuePresent = false;
+            currentValue = default(T);
+            return oldValue;
         }
 
         public Awaitable Yield(T value)
