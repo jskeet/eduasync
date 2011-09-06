@@ -3,3 +3,4 @@ glob:*/obj
 glob:*.suo
 glob:*.user
 glob:_ReSharper*
+AsyncCtpLibrary.dll
