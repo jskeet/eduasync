@@ -20,14 +20,23 @@ namespace Eduasync
 {
     public struct SimpleVoidAwaiter
     {
-        public bool IsCompleted { get { return true; } }
+        public bool IsCompleted
+        {
+            get
+            {
+                Console.WriteLine("IsCompleted called");
+                return false;
+            }
+        }
 
         public void OnCompleted(Action continuation)
         {
+            Console.WriteLine("OnCompleted called");
         }
 
         public void GetResult()
         {
+            Console.WriteLine("GetResult called");
         }
     }
 }

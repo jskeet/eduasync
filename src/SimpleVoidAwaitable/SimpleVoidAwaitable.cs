@@ -14,12 +14,14 @@
 // limitations under the License.
 #endregion
 
+using System;
 namespace Eduasync
 {
     public struct SimpleVoidAwaitable
     {
         public SimpleVoidAwaiter GetAwaiter()
         {
+            Console.WriteLine("GetAwaiter called");
             return new SimpleVoidAwaiter();
         }
     }

@@ -32,7 +32,7 @@ namespace Eduasync
         {
             Task<int> task = Task<int>.Factory.StartNew(() => 5);
 
-            return await task;
+            return await task + 1;
         }
 
         private static Task<int> ReturnValueAsyncWithoutAssistance()
@@ -47,11 +47,13 @@ namespace Eduasync
                 if (!awaiter.IsCompleted)
                 {
                     // Result wasn't available. Add a continuation, and return the builder.
+                    // We really want: awaiter.OnCompleted(goto afterAwait);
                     awaiter.OnCompleted(() =>
                     {
                         try
                         {
-                            builder.SetResult(awaiter.GetResult());
+                            int tmp2 = awaiter.GetResult();
+                            builder.SetResult(tmp2 + 1);
                         }
                         catch (Exception e)
                         {
@@ -62,7 +64,9 @@ namespace Eduasync
                 }
 
                 // Result was already available: proceed synchronously
-                builder.SetResult(awaiter.GetResult());
+                afterAwait:
+                int tmp = awaiter.GetResult();
+                builder.SetResult(tmp + 1);
             }
             catch (Exception e)
             {

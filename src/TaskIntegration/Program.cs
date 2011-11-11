@@ -35,12 +35,15 @@ namespace Eduasync
 
         private static async Task<int> SumAsync()
         {
-            Task<int> task1 = Task.Factory.StartNew(() => { Thread.Sleep(500); return 10; });
-            Task<int> task2 = Task.Factory.StartNew(() => { Thread.Sleep(750); return 5; });
+            Task<int> task1 = Task.Factory.StartNew(() => { Thread.Sleep(750); return 10; });
+            Task<int> task2 = Task.Factory.StartNew(() => { Thread.Sleep(500); return 5; });
 
             Log("In SumAsync, before awaits");
            
             int value1 = await task1;
+
+            Log("In SumAsync, between awaits");
+            
             int value2 = await task2;
 
             Log("In SumAsync, after awaits");

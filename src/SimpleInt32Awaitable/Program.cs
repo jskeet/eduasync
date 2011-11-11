@@ -15,6 +15,7 @@
 #endregion
 
 using System.Threading.Tasks;
+using System;
 
 namespace Eduasync
 {
@@ -29,6 +30,7 @@ namespace Eduasync
         {
             SimpleInt32Awaitable awaitable = new SimpleInt32Awaitable();
             int result = await awaitable;
+            Console.WriteLine("Result was: {0}", 5);
         }
     }
 }

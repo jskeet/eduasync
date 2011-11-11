@@ -24,7 +24,7 @@ namespace Eduasync
         private static void Main(string[] args)
         {
             Task<int> task = Return10Async();
-            Console.WriteLine(task.Result);
+            Console.WriteLine("Main got result: {0}", task.Result);
         }
 
         // Warning CS1998 is about a method with no awaits in... exactly what we're trying to

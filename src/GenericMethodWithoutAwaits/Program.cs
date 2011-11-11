@@ -30,7 +30,7 @@ namespace Eduasync
 #pragma warning disable 1998
         private static async Task<int> DoNothingAsync()
         {
-            return 0;
+            return 5;
         }
 #pragma warning restore 1998
     }

@@ -32,7 +32,7 @@ namespace System.Runtime.CompilerServices
 
         public void SetResult(T result)
         {
-            Console.WriteLine("SetResult called");
+            Console.WriteLine("SetResult called: {0}", result);
         }
 
         public Task<T> Task { get { return null; } }

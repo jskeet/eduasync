@@ -36,7 +36,6 @@ namespace Eduasync
             Task<int> task2 = Task.Factory.StartNew(() => 2);
             Task<int> task3 = Task.Factory.StartNew(() => 3);
 
-
             int value1 = await task1;
             int value2 = await task2;
             int value3 = await task3;
