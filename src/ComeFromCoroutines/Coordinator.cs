@@ -64,7 +64,7 @@ namespace Eduasync
                 labelActions[label] = actionsForLabel;
             }
             // If there are no actions queued, we'll keep going. Otherwise,
-            // we'll jump to the relevant ComeFrom.
+            // we'll jump to the relevant ComeFrom, then come back to the calling code when that's finished.
             return new LabelAwaiter(this, actionsForLabel.Count == 0 ? null : actionsForLabel.Dequeue());
         }
 
@@ -86,14 +86,14 @@ namespace Eduasync
 
             public bool IsCompleted { get { return pendingAction == null; } }
 
-            public void GetResult()
-            {
-            }
-
             public void OnCompleted(Action continuation)
             {
                 coordinator.stack.Push(continuation);
                 coordinator.stack.Push(pendingAction);
+            }
+            
+            public void GetResult()
+            {
             }
         }
 
@@ -113,13 +113,13 @@ namespace Eduasync
 
             public bool IsCompleted { get { return false; } }
 
-            public void GetResult()
-            {
-            }
-
             public void OnCompleted(Action continuation)
             {
                 labelActions.Enqueue(continuation);
+            }
+
+            public void GetResult()
+            {
             }
         }
     }

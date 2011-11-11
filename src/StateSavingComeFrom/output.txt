@@ -1,4 +1,18 @@
-﻿Message at 14/05/2011 08:05:25
+﻿SimpleEntryPoint:
+Start of SimpleOtherMethod
+After ComeFrom x in SimpleOtherMethod. count=0. Returning.
+First call to Label(x)
+After ComeFrom x in SimpleOtherMethod. count=1. Returning.
+Second call to Label(x)
+After ComeFrom x in SimpleOtherMethod. count=2. Returning.
+Registering interesting in y
+After ComeFrom(y). FirstTime=True
+After ComeFrom(y). FirstTime=False
+Finished
+
+
+ComplexEntryPoint:
+Message at 14/05/2011 08:05:25
 We logged something.
 Just after ComeFrom(End). count=0
 We logged something.

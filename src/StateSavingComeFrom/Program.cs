@@ -22,11 +22,49 @@ namespace Eduasync
     {
         private static void Main(string[] args)
         {
-            Coordinator coordinator = new Coordinator(EntryPoint);
+            Coordinator coordinator = new Coordinator(SimpleEntryPoint);
             coordinator.Start();
         }
 
-        private static async void EntryPoint(Coordinator coordinator)
+        // ------------------ SIMPLE EXAMPLE ------------------
+        private static async void SimpleEntryPoint(Coordinator coordinator)
+        {
+            await coordinator.Execute(SimpleOtherMethod);
+
+            Console.WriteLine("First call to Label(x)");
+            await coordinator.Label("x");
+
+            Console.WriteLine("Second call to Label(x)");
+            await coordinator.Label("x");
+
+            Console.WriteLine("Registering interesting in y");
+            bool firstTime = true;
+            await coordinator.ComeFrom("y");
+
+            Console.WriteLine("After ComeFrom(y). FirstTime={0}", firstTime);
+
+            if (firstTime)
+            {
+                firstTime = false;
+                await coordinator.Label("y");
+            }
+            Console.WriteLine("Finished");
+        }
+
+        private static async void SimpleOtherMethod(Coordinator coordinator)
+        {
+            Console.WriteLine("Start of SimpleOtherMethod");
+
+            int count = 0;
+            await coordinator.ComeFrom("x");
+
+            Console.WriteLine("After ComeFrom x in SimpleOtherMethod. count={0}. Returning.",
+                              count);
+            count++;
+        }
+
+        // ------------------ COMPLEX EXAMPLE ------------------
+        private static async void ComplexEntryPoint(Coordinator coordinator)
         {
             await coordinator.Execute(SetUpLogComeFrom);
             int count = 0;
