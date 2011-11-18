@@ -4,3 +4,6 @@ glob:*.suo
 glob:*.user
 glob:_ReSharper*
 AsyncCtpLibrary.dll
+syntax: glob
+*crunch*
+*.dotCover
