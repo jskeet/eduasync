@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 VoidMethodWithoutAwaits", "VoidMethodWithoutAwaits\01 VoidMethodWithoutAwaits.csproj", "{A67F15CA-D32C-4511-B8B7-DCC3024D705C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 NonGenericMethodWithoutAwaits", "NonGenericMethodWithoutAwaits\02 NonGenericMethodWithoutAwaits.csproj", "{D47A7B33-741B-4067-B49E-6FC78529460C}"
@@ -50,6 +50,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24 DirectedCoroutines", "DirectedCoroutines\24 DirectedCoroutines.csproj", "{CBE8358C-AC2A-4316-B6CE-651AA39ACA4C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "25 ConcurrentCoroutines", "ConcurrentCoroutines\25 ConcurrentCoroutines.csproj", "{DD691525-DA7E-4E17-95D1-A9EF76E0B104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "26 MajorityVoting", "MajorityVoting\26 MajorityVoting.csproj", "{8EF7E475-E006-4B38-A602-1AF926905477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "27 MajorityVoting.Tests", "MajorityVoting.Tests\27 MajorityVoting.Tests.csproj", "{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -311,6 +315,26 @@ Global
 		{DD691525-DA7E-4E17-95D1-A9EF76E0B104}.Release|Mixed Platforms.Build.0 = Release|x86
 		{DD691525-DA7E-4E17-95D1-A9EF76E0B104}.Release|x86.ActiveCfg = Release|x86
 		{DD691525-DA7E-4E17-95D1-A9EF76E0B104}.Release|x86.Build.0 = Release|x86
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8EF7E475-E006-4B38-A602-1AF926905477}.Release|x86.ActiveCfg = Release|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{949D08DF-FB0F-4FAC-BA10-BE49BEB62BD0}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
