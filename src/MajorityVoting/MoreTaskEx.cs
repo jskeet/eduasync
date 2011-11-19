@@ -39,6 +39,13 @@ namespace Eduasync
             {
                 throw new ArgumentException("Empty sequence of tasks");
             }
+            foreach (var task in taskList)
+            {
+                if (task == null)
+                {
+                    throw new ArgumentException("Null task in sequence");
+                }
+            }
             return WhenMajorityImpl(taskList);
         }
 

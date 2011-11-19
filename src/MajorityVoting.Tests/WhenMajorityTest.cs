@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
@@ -22,6 +23,29 @@ namespace Eduasync
     [TestFixture]
     public class WhenMajorityTest
     {
+        [Test]
+        public void NullSequenceOfTasks()
+        {
+            IEnumerable<Task<int>> tasks = null;
+            Assert.Throws<ArgumentNullException>(() => MoreTaskEx.WhenMajority(tasks));
+        }
+
+        [Test]
+        public void EmptySequenceOfTasks()
+        {
+            IEnumerable<Task<int>> tasks = new Task<int>[0];
+            Assert.Throws<ArgumentException>(() => MoreTaskEx.WhenMajority(tasks));
+        }
+
+        [Test]
+        public void NullReferencesWithinSequence()
+        {
+            // Create a task just so we'd *otherwise* be valid
+            var timeMachine = new TimeMachine();
+            var task = timeMachine.AddSuccessTask(1, 10);
+            Assert.Throws<ArgumentException>(() => MoreTaskEx.WhenMajority(task, null));
+        }
+
         [Test]
         public void SimpleSuccess()
         {
