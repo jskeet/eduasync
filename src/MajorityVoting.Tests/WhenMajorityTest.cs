@@ -26,14 +26,14 @@ namespace Eduasync
         [Test]
         public void NullSequenceOfTasks()
         {
-            IEnumerable<Task<int>> tasks = null;
+            IEnumerable<Task<string>> tasks = null;
             Assert.Throws<ArgumentNullException>(() => MoreTaskEx.WhenMajority(tasks));
         }
 
         [Test]
         public void EmptySequenceOfTasks()
         {
-            IEnumerable<Task<int>> tasks = new Task<int>[0];
+            IEnumerable<Task<string>> tasks = new Task<string>[0];
             Assert.Throws<ArgumentException>(() => MoreTaskEx.WhenMajority(tasks));
         }
 
@@ -42,7 +42,7 @@ namespace Eduasync
         {
             // Create a task just so we'd *otherwise* be valid
             var timeMachine = new TimeMachine();
-            var task = timeMachine.AddSuccessTask(1, 10);
+            var task = timeMachine.AddSuccessTask(1, "x");
             Assert.Throws<ArgumentException>(() => MoreTaskEx.WhenMajority(task, null));
         }
 
@@ -51,9 +51,9 @@ namespace Eduasync
         {
             var timeMachine = new TimeMachine();
             // All three tasks return the same value.
-            var task1 = timeMachine.AddSuccessTask(1, 10);
-            var task2 = timeMachine.AddSuccessTask(2, 10);
-            var task3 = timeMachine.AddSuccessTask(3, 10);
+            var task1 = timeMachine.AddSuccessTask(1, "x");
+            var task2 = timeMachine.AddSuccessTask(2, "x");
+            var task3 = timeMachine.AddSuccessTask(3, "x");
 
             var resultTask = MoreTaskEx.WhenMajority(task1, task2, task3);
             Assert.IsFalse(resultTask.IsCompleted);
@@ -65,7 +65,28 @@ namespace Eduasync
             // Second result gives a majority
             timeMachine.AdvanceTo(2);
             Assert.AreEqual(TaskStatus.RanToCompletion, resultTask.Status);
-            Assert.AreEqual(10, resultTask.Result);
+            Assert.AreEqual("x", resultTask.Result);
+        }
+
+        // This is the same as SimpleSuccess, except for the ordering of the arguments
+        // to WhenMajority
+        [Test]
+        public void InputOrderIsIrrelevant()
+        {
+            var timeMachine = new TimeMachine();
+            var task1 = timeMachine.AddSuccessTask(1, "x");
+            var task2 = timeMachine.AddSuccessTask(2, "x");
+            var task3 = timeMachine.AddSuccessTask(3, "x");
+
+            var resultTask = MoreTaskEx.WhenMajority(task3, task2, task1);
+            Assert.IsFalse(resultTask.IsCompleted);
+
+            timeMachine.AdvanceTo(1);
+            Assert.IsFalse(resultTask.IsCompleted);
+
+            timeMachine.AdvanceTo(2);
+            Assert.AreEqual(TaskStatus.RanToCompletion, resultTask.Status);
+            Assert.AreEqual("x", resultTask.Result);
         }
 
         [Test]
@@ -73,9 +94,9 @@ namespace Eduasync
         {
             var timeMachine = new TimeMachine();
             // Second task gives a different result
-            var task1 = timeMachine.AddSuccessTask(1, 10);
-            var task2 = timeMachine.AddSuccessTask(2, 20);
-            var task3 = timeMachine.AddSuccessTask(3, 10);
+            var task1 = timeMachine.AddSuccessTask(1, "x");
+            var task2 = timeMachine.AddSuccessTask(2, "y");
+            var task3 = timeMachine.AddSuccessTask(3, "x");
 
             var resultTask = MoreTaskEx.WhenMajority(task1, task2, task3);
             Assert.IsFalse(resultTask.IsCompleted);
@@ -91,7 +112,7 @@ namespace Eduasync
             // Third result gives majority verdict
             timeMachine.AdvanceTo(3);
             Assert.AreEqual(TaskStatus.RanToCompletion, resultTask.Status);
-            Assert.AreEqual(10, resultTask.Result);
+            Assert.AreEqual("x", resultTask.Result);
         }
 
         [Test]
@@ -99,9 +120,9 @@ namespace Eduasync
         {
             var timeMachine = new TimeMachine();
             // Second task gives a different result
-            var task1 = timeMachine.AddSuccessTask(1, 10);
-            var task2 = timeMachine.AddFaultingTask<int>(2, new Exception("Bang!"));
-            var task3 = timeMachine.AddSuccessTask(3, 10);
+            var task1 = timeMachine.AddSuccessTask(1, "x");
+            var task2 = timeMachine.AddFaultingTask<string>(2, new Exception("Bang!"));
+            var task3 = timeMachine.AddSuccessTask(3, "x");
 
             var resultTask = MoreTaskEx.WhenMajority(task1, task2, task3);
             Assert.IsFalse(resultTask.IsCompleted);
@@ -117,7 +138,7 @@ namespace Eduasync
             // Third result gives majority verdict
             timeMachine.AdvanceTo(3);
             Assert.AreEqual(TaskStatus.RanToCompletion, resultTask.Status);
-            Assert.AreEqual(10, resultTask.Result);
+            Assert.AreEqual("x", resultTask.Result);
         }
 
         [Test]
@@ -125,9 +146,9 @@ namespace Eduasync
         {
             var timeMachine = new TimeMachine();
             // Second task gives a different result
-            var task1 = timeMachine.AddCancelTask<int>(1);
-            var task2 = timeMachine.AddFaultingTask<int>(2, new Exception("Bang 2!"));
-            var task3 = timeMachine.AddSuccessTask(3, 10);
+            var task1 = timeMachine.AddCancelTask<string>(1);
+            var task2 = timeMachine.AddFaultingTask<string>(2, new Exception("Bang 2!"));
+            var task3 = timeMachine.AddSuccessTask(3, "x");
             var resultTask = MoreTaskEx.WhenMajority(task1, task2, task3);
             Assert.IsFalse(resultTask.IsCompleted);
 
@@ -145,9 +166,9 @@ namespace Eduasync
         {
             var timeMachine = new TimeMachine();
             // Second task gives a different result
-            var task1 = timeMachine.AddSuccessTask(1, 10);
-            var task2 = timeMachine.AddSuccessTask(2, 20);
-            var task3 = timeMachine.AddSuccessTask(3, 30);
+            var task1 = timeMachine.AddSuccessTask(1, "x");
+            var task2 = timeMachine.AddSuccessTask(2, "y");
+            var task3 = timeMachine.AddSuccessTask(3, "z");
 
             var resultTask = MoreTaskEx.WhenMajority(task1, task2, task3);
             Assert.IsFalse(resultTask.IsCompleted);
