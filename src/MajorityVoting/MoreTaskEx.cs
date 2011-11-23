@@ -56,7 +56,7 @@ namespace Eduasync
             int failures = 0;
             int bestCount = 0;
             
-            Dictionary<T, int> results = new Dictionary<T,int>();
+            Dictionary<T, int> results = new Dictionary<T, int>();
             List<Exception> exceptions = new List<Exception>();
             while (true)
             {
