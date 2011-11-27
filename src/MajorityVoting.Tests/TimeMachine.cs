@@ -22,11 +22,10 @@ namespace Eduasync
 {
     public class TimeMachine
     {
-        int currentTime = 0;
+        private int currentTime = 0;
+        private readonly SortedList<int, Action> actions = new SortedList<int, Action>();
 
         public int CurrentTime { get { return currentTime; } }
-
-        public SortedList<int, Action> actions = new SortedList<int, Action>();
 
         public void AdvanceBy(int time)
         {
@@ -35,7 +34,7 @@ namespace Eduasync
 
         public void AdvanceTo(int time)
         {
-            // Okay, not terribly efficient, but...
+            // Okay, not terribly efficient, but it's simple.
             foreach (var entry in actions)
             {
                 if (entry.Key > currentTime && entry.Key <= time)
