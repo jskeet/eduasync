@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 
@@ -35,16 +36,13 @@ namespace Eduasync
                 throw new ArgumentNullException("tasks");
             }
             List<Task<T>> taskList = new List<Task<T>>(tasks);
-            if (taskList.Count == 0)
+            if (!taskList.Any())
             {
                 throw new ArgumentException("Empty sequence of tasks");
             }
-            foreach (var task in taskList)
+            if (taskList.Any(task => task == null))
             {
-                if (task == null)
-                {
-                    throw new ArgumentException("Null task in sequence");
-                }
+                throw new ArgumentException("Null task in sequence");
             }
             return WhenMajorityImpl(taskList);
         }
