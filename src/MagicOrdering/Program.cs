@@ -26,11 +26,11 @@ namespace Eduasync
     {
         private static void Main(string[] args)
         {
-            Task task = PrintTasksAsync();
+            Task task = PrintDelayedRandomTasksAsync();
             task.Wait();
         }
 
-        private static async Task PrintTasksAsync()
+        private static async Task PrintDelayedRandomTasksAsync()
         {
             Random rng = new Random();
             var values = Enumerable.Range(0, 10).Select(_ => rng.Next(3000)).ToList();
@@ -75,18 +75,22 @@ namespace Eduasync
             // returns the incremented value...
             int prevIndex = -1;
 
-            // Now comes the magic...
+            // We don't have to create this outside the loop, but it makes it clearer
+            // that the continuation is the same for all tasks.
+            Action<Task<T>> continuation = completedTask =>
+            {
+                int index = Interlocked.Increment(ref prevIndex);
+                var source = completionSourceList[index];
+                PropagateResult(completedTask, source);
+            };
+
             foreach (var inputTask in inputTaskList)
             {
-                inputTask.ContinueWith(completed =>
-                {
-                    var source = completionSourceList[Interlocked.Increment(ref prevIndex)];
-                    PropagateStatus(completed, source);
-                },
-                CancellationToken.None,
-                TaskContinuationOptions.ExecuteSynchronously,
-                // TODO: Work out whether this is really the right scheduler to use
-                TaskScheduler.Default);
+                // TODO: Work out whether TaskScheduler.Default is really the right one to use.
+                inputTask.ContinueWith(continuation,
+                                       CancellationToken.None,
+                                       TaskContinuationOptions.ExecuteSynchronously,
+                                       TaskScheduler.Default);
             }
 
             return completionSourceList.Select(source => source.Task);
@@ -96,7 +100,7 @@ namespace Eduasync
         /// Propagates the status of the given task (which must be completed) to a task completion source
         /// (which should not be).
         /// </summary>
-        private static void PropagateStatus<T>(Task<T> completedTask,
+        private static void PropagateResult<T>(Task<T> completedTask,
             TaskCompletionSource<T> completionSource)
         {
             switch (completedTask.Status)
