@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "30 TaskCaching", "TaskCaching\30 TaskCaching.csproj", "{9096005E-EC37-45F5-B57B-DA230A1B6480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31 AwaiterFields", "AwaiterFields\31 AwaiterFields.csproj", "{7ECF7376-8765-49D6-8924-155E63B655CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "32 MutableAwaiters", "MutableAwaiters\32 MutableAwaiters.csproj", "{C9CF9B53-D98C-4C96-9A96-94ABD61DEE56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ECF7376-8765-49D6-8924-155E63B655CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECF7376-8765-49D6-8924-155E63B655CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ECF7376-8765-49D6-8924-155E63B655CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ECF7376-8765-49D6-8924-155E63B655CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9096005E-EC37-45F5-B57B-DA230A1B6480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9096005E-EC37-45F5-B57B-DA230A1B6480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9096005E-EC37-45F5-B57B-DA230A1B6480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9096005E-EC37-45F5-B57B-DA230A1B6480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CF9B53-D98C-4C96-9A96-94ABD61DEE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CF9B53-D98C-4C96-9A96-94ABD61DEE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CF9B53-D98C-4C96-9A96-94ABD61DEE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CF9B53-D98C-4C96-9A96-94ABD61DEE56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
